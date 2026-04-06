@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What Really Happened | Trauma Education Series</title>
-  <meta name="description" content="A comprehensive psychoeducational curriculum for understanding Complex PTSD through the examination of a documented life." />
+  <title>Capitol Contracts LLC | What Really Happened Trauma Intervention</title>
+  <meta name="description" content="A specialized 18-session trauma intervention for high-dropout, justice-involved, and veteran populations. SDVOSB & HUBZone certified trauma education." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -43,513 +43,553 @@
     a:hover { color: var(--ember-lt); }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 80px 40px;
+      padding: 0 40px;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 100px;
-      padding-bottom: 60px;
+    /* Navbar */
+    nav {
+      padding: 30px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       border-bottom: 1px solid var(--border);
     }
 
-    .institution {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
-
-    h1 {
+    .logo {
       font-family: var(--serif);
-      font-size: 4rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--white);
-      margin-bottom: 20px;
-      letter-spacing: -1px;
-      line-height: 1.1;
+      letter-spacing: -0.5px;
     }
 
-    .tagline {
-      font-family: var(--serif);
-      font-size: 1.75rem;
-      font-style: italic;
-      color: var(--muted);
-      margin-bottom: 30px;
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .intro-text {
-      max-width: 750px;
-      margin: 0 auto;
-      font-size: 1.25rem;
-      color: var(--light);
-      line-height: 1.8;
+    /* Hero Section */
+    .hero {
+      padding: 120px 0 100px;
+      text-align: center;
     }
 
-    .sections {
-      display: grid;
-      gap: 100px;
-    }
-
-    .section-header {
+    .badge-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
       margin-bottom: 40px;
-      border-left: 4px solid var(--ember);
-      padding-left: 25px;
     }
 
-    .section-header h2 {
+    .badge {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 6px 12px;
+      border: 1px solid var(--ember);
+      color: var(--ember);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
       font-family: var(--serif);
-      font-size: 2.5rem;
+      font-size: 4.5rem;
+      line-height: 1.1;
       color: var(--white);
-      margin-bottom: 10px;
+      margin-bottom: 30px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .section-header p {
+    .hero .hook {
+      font-size: 1.5rem;
+      color: var(--light);
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .hero .value-prop {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn-primary {
+      background: var(--ember);
+      color: var(--white);
+      padding: 18px 35px;
       font-family: var(--mono);
       font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
+      letter-spacing: 2px;
+      font-weight: 700;
+      transition: all 0.3s ease;
     }
 
-    /* Grid Layouts */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+    .btn-primary:hover {
+      background: var(--ember-lt);
+      transform: translateY(-2px);
     }
 
-    .card {
-      background: var(--mid);
+    .btn-secondary {
       border: 1px solid var(--border);
-      padding: 35px;
-      border-radius: 4px;
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      color: var(--light);
+      padding: 18px 35px;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ember);
+      color: var(--ember);
+    }
+
+    /* Pathways Section */
+    .pathways {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--ember);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 60px;
+      text-align: center;
+      display: block;
+    }
+
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .pathway-card {
+      background: var(--mid);
+      padding: 50px 40px;
+      border: 1px solid var(--border);
+      transition: all 0.4s ease;
       display: flex;
       flex-direction: column;
     }
 
-    .card:hover {
-      background: var(--dark);
+    .pathway-card:hover {
       border-color: var(--ember);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transform: translateY(-10px);
     }
 
-    .card h3 {
+    .pathway-card h3 {
       font-family: var(--serif);
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       color: var(--white);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    .card p {
+    .pathway-card p {
       font-size: 1rem;
       color: var(--body);
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       flex-grow: 1;
     }
 
-    .card .btn {
-      align-self: flex-start;
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 10px 20px;
-      border: 1px solid var(--ember);
-      color: var(--ember);
-      transition: all 0.3s ease;
+    .pathway-card ul {
+      list-style: none;
+      margin-bottom: 40px;
     }
 
-    .card:hover .btn {
-      background: var(--ember);
-      color: var(--white);
-    }
-
-    /* List Layouts */
-    .file-list {
-      display: grid;
-      gap: 15px;
-    }
-
-    .file-row {
+    .pathway-card li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      background: var(--mid);
-      padding: 15px 25px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      transition: all 0.3s ease;
+      gap: 10px;
     }
 
-    .file-row:hover {
-      border-color: var(--muted);
+    .pathway-card li::before {
+      content: "→";
+      color: var(--ember);
+    }
+
+    /* Compliance Section */
+    .compliance {
+      padding: 80px 0;
       background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
-    .file-info {
-      display: flex;
-      align-items: center;
-      gap: 15px;
+    .compliance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
     }
 
-    .file-icon {
-      font-size: 1.2rem;
-      color: var(--ember);
-    }
-
-    .file-name {
-      font-weight: 500;
-      color: var(--light);
-    }
-
-    .file-meta {
+    .comp-item h4 {
       font-family: var(--mono);
       font-size: 0.7rem;
       color: var(--muted);
       text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .download-link {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-bottom: 1px solid transparent;
+    .comp-item p {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--light);
     }
 
-    .file-row:hover .download-link {
-      color: var(--ember);
-      border-color: var(--ember);
+    /* Resource Archive */
+    .archive {
+      padding: 120px 0;
     }
 
-    /* Session Groups */
-    .session-group {
+    .archive-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
       margin-bottom: 60px;
     }
 
-    .group-title {
+    .archive-header h2 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: var(--white);
+    }
+
+    .search-container {
+      position: relative;
+      width: 300px;
+    }
+
+    .search-container input {
+      width: 100%;
+      background: var(--mid);
+      border: 1px solid var(--border);
+      padding: 12px 20px;
+      color: var(--white);
+      font-family: var(--prose);
+      border-radius: 4px;
+    }
+
+    .file-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .file-table th {
+      text-align: left;
       font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .file-table td {
+      padding: 25px 20px;
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .file-table tr:hover td {
+      background: var(--mid);
+    }
+
+    .file-title {
+      font-weight: 600;
+      color: var(--light);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .file-desc {
       font-size: 0.9rem;
-      color: var(--ember);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
+      color: var(--muted);
     }
 
-    .group-title::after {
-      content: "";
-      height: 1px;
+    .file-tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 4px 8px;
       background: var(--border);
-      flex-grow: 1;
+      color: var(--muted);
+      text-transform: uppercase;
+      border-radius: 2px;
     }
 
+    /* Footer */
     footer {
-      margin-top: 120px;
-      padding: 60px 0;
+      padding: 100px 0;
       border-top: 1px solid var(--border);
       text-align: center;
     }
 
-    .footer-content {
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
     .footer-logo {
       font-family: var(--serif);
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: var(--white);
       margin-bottom: 20px;
     }
 
+    .footer-meta {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .footer-quote {
+      max-width: 500px;
+      margin: 0 auto;
+      font-style: italic;
+      color: var(--light);
+      font-size: 1.1rem;
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 992px) {
+      .pathway-grid { grid-template-columns: 1fr; }
+      .compliance-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .hero h1 { font-size: 3rem; }
+    }
+
     @media (max-width: 768px) {
-      h1 { font-size: 2.8rem; }
-      .container { padding: 40px 20px; }
-      .grid { grid-template-columns: 1fr; }
+      .archive-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .search-container { width: 100%; }
+      .cta-group { flex-direction: column; }
+      .container { padding: 0 20px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <div class="institution">Capitol Contracts LLC • Clarksville, Arkansas</div>
+    <nav>
+      <div class="logo">Capitol Contracts LLC</div>
+      <div class="nav-links">
+        <a href="#pathways">Pathways</a>
+        <a href="#archive">Resources</a>
+        <a href="1-PAGE%20CAPABILITY%20STATEMENT%201.pdf" target="_blank">Capabilities</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="badge-container">
+        <span class="badge">SDVOSB Pending</span>
+        <span class="badge">HUBZone Pending</span>
+        <span class="badge">UEI: HH77KN5AV5X7</span>
+      </div>
       <h1>What Really Happened</h1>
-      <p class="tagline">Understanding Complex PTSD Through a Documented Life</p>
-      <div class="intro-text">
-        A 18-session psychoeducational curriculum that teaches the mechanisms of trauma — its neurological foundations, relational consequences, and behavioral presentations — through the sustained examination of one documented life.
+      <p class="hook">A specialized 18-session intervention designed for high-dropout, justice-involved, and veteran populations who resist traditional clinical models.</p>
+      <p class="value-prop">We reduce recidivism and suicide risk through a peer-facilitated, non-clinical framework focused on nervous system regulation and moral injury resilience.</p>
+      <div class="cta-group">
+        <a href="#pathways" class="btn-primary">Explore Pathways</a>
+        <a href="WhatReallyHappened_CurriculumOverview.pdf" target="_blank" class="btn-secondary">Download Prospectus</a>
       </div>
     </header>
 
-    <main class="sections">
-      <!-- Core Curriculum Section -->
-      <section>
-        <div class="section-header">
-          <h2>Core Curriculum</h2>
-          <p>Interactive Modules & Strategic Overviews</p>
+    <section class="compliance">
+      <div class="compliance-grid">
+        <div class="comp-item">
+          <h4>Primary NAICS</h4>
+          <p>611710 • 611430</p>
         </div>
-        <div class="grid">
-          <div class="card">
-            <h3>Curriculum Overview</h3>
-            <p>A complete guide to the 18 sessions, learning outcomes, and the "What Happened to You" methodology.</p>
-            <a href="WhatReallyHappened_CurriculumOverview.pdf" target="_blank" class="btn">View PDF</a>
-          </div>
-          <div class="card">
-            <h3>Interactive Course</h3>
-            <p>The digital companion to the curriculum, featuring session breakdowns and core clinical concepts.</p>
-            <a href="cptsd_course.html" target="_blank" class="btn">Open Module</a>
-          </div>
-          <div class="card">
-            <h3>The Case Study</h3>
-            <p>Deep dive into the methodology: why specificity succeeds where abstraction fails in trauma education.</p>
-            <a href="case-study.html" target="_blank" class="btn">Read Study</a>
-          </div>
+        <div class="comp-item">
+          <h4>CAGE Code</h4>
+          <p>9ZFJ6</p>
         </div>
-      </section>
+        <div class="comp-item">
+          <h4>Framework</h4>
+          <p>SAMHSA Aligned</p>
+        </div>
+        <div class="comp-item">
+          <h4>Target Vehicle</h4>
+          <p>SSG Fox Grant</p>
+        </div>
+      </div>
+    </section>
 
-      <!-- Research & Whitepapers -->
-      <section>
-        <div class="section-header">
-          <h2>Research & Strategy</h2>
-          <p>Whitepapers, Lecture Series & Business Plans</p>
-        </div>
-        <div class="file-list">
-          <div class="file-row">
-            <div class="file-info">
-              <span class="file-icon">📄</span>
-              <div>
-                <div class="file-name">Understanding CPTSD Through Daniel's Life</div>
-                <div class="file-meta">Lecture Series • PDF</div>
-              </div>
-            </div>
-            <a href="Lecture%20Series_%20What%20Really%20Happened%20%E2%80%93%20Understanding%20Complex%20PTSD%20Through%20Daniel's%20Life.pdf" target="_blank" class="download-link">Open File</a>
-          </div>
-          <div class="file-row">
-            <div class="file-info">
-              <span class="file-icon">📄</span>
-              <div>
-                <div class="file-name">How Trauma Shapes Relationships & Legal Struggles</div>
-                <div class="file-meta">Research Paper • PDF</div>
-              </div>
-            </div>
-            <a href="How%20Trauma%20Shapes%20Relationships,%20Addiction,%20and%20Legal%20Struggles%20(1).pdf" target="_blank" class="download-link">Open File</a>
-          </div>
-          <div class="file-row">
-            <div class="file-info">
-              <span class="file-icon">📄</span>
-              <div>
-                <div class="file-name">CPTSD & Suicide Risk: A Clinical Examination</div>
-                <div class="file-meta">Whitepaper • DOCX</div>
-              </div>
-            </div>
-            <a href="CPTSD_Suicide_Risk_Paper.docx" target="_blank" class="download-link">Download</a>
-          </div>
-          <div class="file-row">
-            <div class="file-info">
-              <span class="file-icon">💼</span>
-              <div>
-                <div class="file-name">Capitol Contracts Business Plan & Pricing 2026</div>
-                <div class="file-meta">Strategic Document • DOCX</div>
-              </div>
-            </div>
-            <a href="capitol_contracts_business_plan.docx" target="_blank" class="download-link">Download</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- The 18 Sessions -->
-      <section>
-        <div class="section-header">
-          <h2>The 18 Sessions</h2>
-          <p>Complete Facilitator Scripts & Session Materials</p>
+    <section id="pathways" class="pathways">
+      <span class="section-label">Select Your Pathway</span>
+      <div class="pathway-grid">
+        <!-- Administrators -->
+        <div class="pathway-card">
+          <h3>For Administrators</h3>
+          <p>Strategic integration for VA, DoD, and justice-involved systems seeking scalable trauma literacy.</p>
+          <ul>
+            <li>Modularized Intervention Framework</li>
+            <li>Measurable Retention Outcomes</li>
+            <li>Sole-Source Contracting Ready</li>
+          </ul>
+          <a href="capitol_contracts_business_plan.docx" class="btn-secondary">View Business Plan</a>
         </div>
 
-        <!-- Part I -->
-        <div class="session-group">
-          <div class="group-title">Part I: How It Gets Built Into You</div>
-          <div class="file-list">
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 00: Welcome, Safety & Why This Course Exists</div>
-              </div>
-              <a href="Session_00_Welcome_Safety_and_Why_This_Course_Exists%20(1).docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 01: The Blueprint of Survival</div>
-              </div>
-              <a href="Session_01_The_Blueprint_of_Survival.docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 02: The Masks We Wear</div>
-              </div>
-              <a href="Session_02_The_Masks_We_Wear.docx" target="_blank" class="download-link">Download</a>
-            </div>
-          </div>
+        <!-- Facilitators -->
+        <div class="pathway-card">
+          <h3>For Facilitators</h3>
+          <p>Turnkey, word-for-word scripts that allow peer specialists to hold the room safely without clinical licenses.</p>
+          <ul>
+            <li>Load-Bearing Facilitator Scripts</li>
+            <li>Crisis & Safety Protocols</li>
+            <li>Clinical Appendices Included</li>
+          </ul>
+          <a href="cptsd_course.html" class="btn-secondary">Open Facilitator Portal</a>
         </div>
 
-        <!-- Part II -->
-        <div class="session-group">
-          <div class="group-title">Part II: How It Destroys Your Relationships</div>
-          <div class="file-list">
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 03: When Love Hurts</div>
-              </div>
-              <a href="Session_03_When_Love_Hurts.docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 04: The War on Reality</div>
-              </div>
-              <a href="Session_04_The_War_on_Reality.docx" target="_blank" class="download-link">Download</a>
-            </div>
-          </div>
+        <!-- Partners -->
+        <div class="pathway-card">
+          <h3>For Partners</h3>
+          <p>Collaborate on pilot programs and regional deployments in rural or under-resourced areas.</p>
+          <ul>
+            <li>HUBZone Rural Outreach</li>
+            <li>Train-the-Trainer Models</li>
+            <li>Custom Session Adaptation</li>
+          </ul>
+          <a href="CapitolContracts_Pricing_2026.docx" class="btn-secondary">Pricing & Licensing</a>
         </div>
+      </div>
+    </section>
 
-        <!-- Part III -->
-        <div class="session-group">
-          <div class="group-title">Part III: How You Tried to Cope</div>
-          <div class="file-list">
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 05: Relapse Isn't a Betrayal</div>
-              </div>
-              <a href="Session_05_Relapse_Isnt_a_Betrayal.docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 06: What Healing Actually Looks Like</div>
-              </div>
-              <a href="Session_06_What_Healing_Actually_Looks_Like%20(1).docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">🌐</span>
-                <div class="file-name">Session 07: The Breaking Point (Interactive)</div>
-              </div>
-              <a href="session-07-5%20(5).html" target="_blank" class="download-link">Open Page</a>
-            </div>
-          </div>
+    <section id="archive" class="archive">
+      <div class="archive-header">
+        <div>
+          <span class="section-label" style="text-align: left; margin-bottom: 10px;">Resource Archive</span>
+          <h2>The Full Curriculum</h2>
         </div>
+        <div class="search-container">
+          <input type="text" id="fileSearch" placeholder="Search sessions or topics..." onkeyup="filterFiles()">
+        </div>
+      </div>
 
-        <!-- Part IV -->
-        <div class="session-group">
-          <div class="group-title">Part IV: The Internal Battlefield</div>
-          <div class="file-list">
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 09: Shame vs. Responsibility</div>
-              </div>
-              <a href="Session_09_Shame_vs_Responsibility%20(1).docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 10: Your Brain on Trauma</div>
-              </div>
-              <a href="Session_10_Your_Brain_on_Trauma.docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 11: The Anatomy of a Spiral</div>
-              </div>
-              <a href="Session_11_The_Anatomy_of_a_Spiral%20(1).docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">🌐</span>
-                <div class="file-name">Session 12: Crisis & Safety Protocol (Interactive)</div>
-              </div>
-              <a href="session-12%20(1).html" target="_blank" class="download-link">Open Page</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Part V -->
-        <div class="session-group">
-          <div class="group-title">Part V: Changing the World Around You</div>
-          <div class="file-list">
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 13: The Lessons Nobody Taught Us</div>
-              </div>
-              <a href="Session_13_The_Lessons_Nobody_Taught_Us.docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 14: Speaking Truth to Power</div>
-              </div>
-              <a href="Session_14_Speaking_Truth_to_Power%20(1).docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 15: The Crucial Question</div>
-              </div>
-              <a href="Session_15_The_Crucial_Question%20(2).docx" target="_blank" class="download-link">Download</a>
-            </div>
-            <div class="file-row">
-              <div class="file-info">
-                <span class="file-icon">📚</span>
-                <div class="file-name">Session 16: The Revolution Must Be Trauma-Informed</div>
-              </div>
-              <a href="Session_16_The_Revolution_Must_Be_Trauma_Informed.docx" target="_blank" class="download-link">Download</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Media & Narratives -->
-      <section>
-        <div class="section-header">
-          <h2>Media & Narratives</h2>
-          <p>Personal Stories & Audio Resources</p>
-        </div>
-        <div class="grid">
-          <div class="card">
-            <h3>Personal Narratives</h3>
-            <p>First-hand accounts including "The First Woman Who Loved Me" and "Chapter: Chastity".</p>
-            <a href="The_First_Woman_Who_Loved_Me.docx" target="_blank" class="btn">Download</a>
-          </div>
-          <div class="card">
-            <h3>Audio Resources</h3>
-            <p>Stabilizing Groups During Active Suicide Disclosures - Essential listening for facilitators.</p>
-            <a href="Stabilizing_Groups_During_Active_Suicide_Disclosures.m4a" target="_blank" class="btn">Play Audio</a>
-          </div>
-        </div>
-      </section>
-    </main>
+      <table class="file-table" id="fileTable">
+        <thead>
+          <tr>
+            <th>Resource Name</th>
+            <th>Category</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Core Documents -->
+          <tr>
+            <td>
+              <span class="file-title">Curriculum Overview & Learning Outcomes</span>
+              <span class="file-desc">Complete 18-session architecture and clinical frame.</span>
+            </td>
+            <td><span class="file-tag">Strategic</span></td>
+            <td><a href="WhatReallyHappened_CurriculumOverview.pdf" target="_blank">Open PDF</a></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="file-title">Capabilities Statement (SDVOSB/HUBZone)</span>
+              <span class="file-desc">Essential for government contracting officers and grant reviewers.</span>
+            </td>
+            <td><span class="file-tag">Compliance</span></td>
+            <td><a href="1-PAGE%20CAPABILITY%20STATEMENT%201.pdf" target="_blank">Open PDF</a></td>
+          </tr>
+          <!-- Sessions -->
+          <tr>
+            <td>
+              <span class="file-title">Session 09: Shame vs. Responsibility</span>
+              <span class="file-desc">Direct moral injury intervention for veteran populations.</span>
+            </td>
+            <td><span class="file-tag">Session Script</span></td>
+            <td><a href="Session_09_Shame_vs_Responsibility%20(1).docx">Download</a></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="file-title">Session 12: Crisis & Safety Protocol</span>
+              <span class="file-desc">Interactive 70-minute safety protocol for suicide risk.</span>
+            </td>
+            <td><span class="file-tag">Interactive</span></td>
+            <td><a href="session-12%20(1).html" target="_blank">Open Page</a></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="file-title">Shut Up, I Have Work Tomorrow</span>
+              <span class="file-desc">Deep dive into high-functioning trauma and productivity as dissociation.</span>
+            </td>
+            <td><span class="file-tag">Deep Dive</span></td>
+            <td><a href="session-07-5%20(5).html" target="_blank">Open Page</a></td>
+          </tr>
+          <!-- Research -->
+          <tr>
+            <td>
+              <span class="file-title">Understanding CPTSD Through Daniel's Life</span>
+              <span class="file-desc">The core case study methodology that grounds clinical concepts.</span>
+            </td>
+            <td><span class="file-tag">Research</span></td>
+            <td><a href="Lecture%20Series_%20What%20Really%20Happened%20%E2%80%93%20Understanding%20Complex%20PTSD%20Through%20Daniel's%20Life.pdf" target="_blank">Open PDF</a></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="file-title">Stabilizing Groups During Active Suicide Disclosures</span>
+              <span class="file-desc">Essential audio resource for peer facilitators in high-risk settings.</span>
+            </td>
+            <td><span class="file-tag">Audio</span></td>
+            <td><a href="Stabilizing_Groups_During_Active_Suicide_Disclosures.m4a" target="_blank">Play Audio</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 30px; color: var(--muted); font-size: 0.9rem; text-align: center;">Access to the full 18-session repository is available for licensed institutional partners.</p>
+    </section>
 
     <footer>
-      <div class="footer-content">
-        <div class="footer-logo">What Really Happened</div>
-        <p>© 2026 Capitol Contracts LLC. All rights reserved.</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">"The revolution is trauma-informed — or it is not a revolution at all."</p>
+      <div class="footer-logo">Capitol Contracts LLC</div>
+      <div class="footer-meta">
+        UEI: HH77KN5AV5X7 • CAGE: 9ZFJ6 • Clarksville, AR<br>
+        SDVOSB & HUBZone Certified (Pending)
       </div>
+      <div class="footer-quote">
+        "We don't fix broken people. We update outdated survival manuals."
+      </div>
+      <p style="margin-top: 60px; font-size: 0.7rem; color: var(--muted);">© 2026 Capitol Contracts LLC. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    function filterFiles() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("fileSearch");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("fileTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
 </body>
 </html>
