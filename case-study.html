@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study — What Really Happened</title>
+  <meta name="description" content="Why a case study. The methodology. The source material." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #0a0908;
+      --dark:     #111110;
+      --mid:      #1c1b19;
+      --border:   #2a2927;
+      --muted:    #6b6860;
+      --body:     #c8c4bc;
+      --light:    #e8e4dc;
+      --white:    #f5f2ec;
+      --ember:    #c4621a;
+      --ember-lt: #d97a38;
+      --ember-dk: #8f3e08;
+      --serif:    'Playfair Display', Georgia, serif;
+      --prose:    'Crimson Pro', Georgia, serif;
+      --mono:     'Space Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--body);
+      font-family: var(--prose);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link {
+      position: absolute; top: -999px; left: 1rem;
+      background: var(--ember); color: var(--white);
+      padding: .5rem 1rem; font-family: var(--mono); font-size: .75rem; z-index: 9999;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,9,8,.94); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .site-name {
+      font-family: var(--mono); font-size: .72rem;
+      letter-spacing: .18em; color: var(--ember); text-transform: uppercase;
+    }
+
+    nav { display: flex; gap: 2rem; }
+
+    nav a {
+      font-family: var(--mono); font-size: .68rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); transition: color .2s;
+    }
+    nav a:hover, nav a.active { color: var(--white); }
+
+    #main { padding-top: 56px; }
+
+    .page-hero {
+      padding: 5rem 6rem 4rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--mid) 0%, var(--black) 100%);
+    }
+
+    .eyebrow {
+      font-family: var(--mono); font-size: .65rem;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--ember); margin-bottom: 1rem;
+    }
+
+    .page-hero h1 {
+      font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 600; color: var(--white);
+      margin-bottom: .75rem; line-height: 1.15;
+    }
+
+    .page-hero .sub {
+      font-size: 1.1rem; color: var(--muted); max-width: 55ch;
+    }
+
+    .content-section {
+      max-width: 860px; margin: 0 auto;
+      padding: 5rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .content-section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--mono); font-size: .62rem;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--ember); margin-bottom: 1rem;
+    }
+
+    .content-section h2 {
+      font-family: var(--serif); font-size: 1.8rem;
+      font-weight: 600; color: var(--white);
+      margin-bottom: 1.25rem; line-height: 1.2;
+    }
+
+    .content-section p {
+      color: var(--body); margin-bottom: 1rem; font-size: 1.05rem;
+    }
+
+    .pullquote {
+      border-left: 2px solid var(--ember-dk);
+      padding: 1.25rem 0 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pullquote p {
+      font-family: var(--serif); font-style: italic;
+      font-size: 1.25rem; color: var(--light);
+      line-height: 1.5; margin: 0;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    .fact-item {
+      background: var(--dark); padding: 1rem 1.25rem;
+    }
+
+    .fact-label {
+      font-family: var(--mono); font-size: .6rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--ember); margin-bottom: .25rem;
+    }
+
+    .fact-value {
+      font-family: var(--prose); font-size: 1rem;
+      color: var(--light);
+    }
+
+    .cta-section {
+      padding: 6rem; text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-section h2 {
+      font-family: var(--serif); font-size: 2rem;
+      color: var(--white); margin-bottom: .75rem;
+    }
+
+    .cta-section p { color: var(--muted); margin-bottom: 2rem; font-size: 1rem; }
+
+    .btn-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block; background: var(--ember); color: var(--white);
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .14em;
+      text-transform: uppercase; padding: .9rem 2rem;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--ember-lt); transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-block; border: 1px solid var(--border); color: var(--body);
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .14em;
+      text-transform: uppercase; padding: .9rem 2rem;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--ember-dk); color: var(--white); }
+
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 3rem 6rem;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem;
+    }
+
+    .footer-brand p {
+      font-family: var(--mono); font-size: .65rem;
+      letter-spacing: .08em; color: var(--ember);
+      text-transform: uppercase; margin-bottom: .5rem;
+    }
+
+    .footer-brand .tagline {
+      font-family: var(--prose); font-size: .95rem; color: var(--muted);
+      letter-spacing: 0; text-transform: none; font-weight: 300; margin-bottom: 1rem;
+    }
+
+    .footer-meta {
+      font-family: var(--mono); font-size: .6rem;
+      color: var(--muted); letter-spacing: .06em; line-height: 1.9;
+    }
+
+    .footer-col h4 {
+      font-family: var(--mono); font-size: .62rem;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: .5rem; }
+    .footer-col ul li a {
+      font-family: var(--prose); font-size: .95rem;
+      color: var(--muted); transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .footer-bottom {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 1.25rem 6rem;
+      font-family: var(--mono); font-size: .6rem;
+      color: var(--muted); letter-spacing: .08em;
+    }
+
+    @media (max-width: 900px) {
+      .page-hero { padding: 3rem 2rem; }
+      .content-section { padding: 3rem 2rem; }
+      .facts-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 3rem 2rem; }
+      footer { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 2rem; }
+      .footer-bottom { padding: 1.25rem 2rem; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <span class="site-name">What Really Happened</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="case-study.html" class="active">Case Study</a>
+      <a href="for.html">Who It's For</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <p class="eyebrow">The Case Study</p>
+      <h1>Why a Case Study</h1>
+      <p class="sub">The argument against abstraction. Why one specific life teaches more than ten aggregate descriptions.</p>
+    </div>
+
+    <div class="content-section">
+      <p class="section-label">The Methodology</p>
+      <h2>The Power of Specificity</h2>
+      <p>Complex PTSD is often taught through definitions, symptom lists, and diagnostic criteria. These are accurate but incomplete. They describe the shape of the thing without conveying what it feels like to live inside it.</p>
+      <p>A case study changes that. It moves from abstraction to lived experience. It shows not just what hypervigilance is, but what it looks like when a body circles an entire building to find the back entrance. Not what dissociation is, but what it feels like when the thinking brain disconnects and the body keeps moving through a day it cannot remember.</p>
+      <p>The curriculum uses one documented life as the primary teaching material. Every clinical concept is grounded in a specific event, relationship, or moment from that life. This is not anecdotal — it is methodological. Specificity is the mechanism by which abstraction becomes usable.</p>
+      <div class="pullquote">
+        <p>"A concept you can only hold in your head is a concept you cannot use in your body."</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <p class="section-label">The Subject</p>
+      <h2>About the Case Study Subject</h2>
+      <p>The curriculum uses a pseudonym to preserve the clinical frame. The case study covers the arc from premature birth through adulthood — from the first moments of dysregulation in a NICU to the specific, non-linear process of rebuilding a nervous system that had learned survival as its primary operating system.</p>
+      <div class="facts-grid">
+        <div class="fact-item">
+          <p class="fact-label">Diagnosis</p>
+          <p class="fact-value">Complex PTSD</p>
+        </div>
+        <div class="fact-item">
+          <p class="fact-label">Addiction</p>
+          <p class="fact-value">Documented history</p>
+        </div>
+        <div class="fact-item">
+          <p class="fact-label">Losses</p>
+          <p class="fact-value">24 documented across lifespan</p>
+        </div>
+        <div class="fact-item">
+          <p class="fact-label">Legal</p>
+          <p class="fact-value">Warrant history, system involvement</p>
+        </div>
+        <div class="fact-item">
+          <p class="fact-label">Psychiatric</p>
+          <p class="fact-value">Multiple hospitalizations</p>
+        </div>
+        <div class="fact-item">
+          <p class="fact-label">Outcome</p>
+          <p class="fact-value">Stabilization and sustained recovery</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <p class="section-label">The Source Material</p>
+      <h2>From the Storm to the Fire</h2>
+      <p>The curriculum is built from <em>From the Storm to the Fire</em>, a published memoir that documents the full arc of this nervous system's journey. The memoir is the primary source material for every session. It is not optional reading — it is the foundation.</p>
+      <div class="pullquote">
+        <p>"Three pounds, four ounces of undercooked soul dropped into a box of glass and wires. A soul too new already prepared for departure. Then something shifted — and the vitals started rising."</p>
+      </div>
+      <p>The memoir is available through standard book distribution channels. It provides the context, the specificity, and the human voice that makes the curriculum clinically usable. Facilitators are encouraged to read it before running the sessions. Participants often read it after completing the curriculum.</p>
+    </div>
+
+    <div class="content-section">
+      <p class="section-label">The Thread</p>
+      <h2>The Decision to Stay</h2>
+      <p>The nervous system that chose to keep going before it had language for choosing. This is the thread that runs across all 18 sessions. Not triumph. Not inspiration. Not a recovery narrative that resolves neatly. But the specific, documented moment-to-moment choice to stay alive when staying alive made no logical sense.</p>
+      <p>The curriculum teaches from this thread. It does not soften it. It does not make it inspirational. It names it as what it is: the mechanism by which a nervous system that was built for survival learned to survive its own survival.</p>
+      <p>This is what makes the curriculum different. It is not built on the story of recovery. It is built on the story of staying. And for the people who have circled buildings to avoid the front entrance, who have made decisions their thinking brain did not understand, who have survived systems that were designed to fail them — that distinction changes everything.</p>
+    </div>
+
+    <section class="cta-section">
+      <h2>Ready to explore the curriculum?</h2>
+      <p>The complete 18-session curriculum is built from this case study and ready for deployment.</p>
+      <div class="btn-row">
+        <a href="curriculum.html" class="btn-primary">View the Curriculum</a>
+        <a href="contact.html" class="btn-secondary">Get in Touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <p>What Really Happened</p>
+      <p class="tagline">A trauma education series built from one documented life. 18 sessions. Complete facilitator scripts. Deployable from day one.</p>
+      <div class="footer-meta">
+        <div>Capitol Contracts LLC · Clarksville, Arkansas</div>
+        <div>Service-Disabled Veteran-Owned Small Business</div>
+        <div>UEI: HH77KN5AV5X7 · CAGE: 9ZFJ6</div>
+        <div>NAICS: 611710 · 611430 · 624190</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="case-study.html">Case Study</a></li>
+        <li><a href="for.html">Who It's For</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Organization</h4>
+      <ul>
+        <li><a href="about.html">Capitol Contracts LLC</a></li>
+        <li><a href="contact.html">Request a Proposal</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-bottom">© 2026 Capitol Contracts LLC. All rights reserved. Built for institutions that need trauma literacy now.</div>
+
+</body>
+</html>
