@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mix | mix of all files</title>
-  <meta name="description" content="A comprehensive collection of resources about trauma, CPTSD, and healing." />
+  <title>What Really Happened | Trauma Education Series</title>
+  <meta name="description" content="A comprehensive psychoeducational curriculum for understanding Complex PTSD through the examination of a documented life." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -39,360 +39,516 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--ember); text-decoration: none; transition: color 0.3s ease; }
+    a { color: var(--ember); text-decoration: none; transition: all 0.3s ease; }
     a:hover { color: var(--ember-lt); }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 80px 40px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 80px;
-      padding-bottom: 40px;
-      border-bottom: 2px solid var(--border);
+      margin-bottom: 100px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .institution {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 30px;
     }
 
     h1 {
       font-family: var(--serif);
-      font-size: 3.5rem;
+      font-size: 4rem;
       font-weight: 700;
       color: var(--white);
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       letter-spacing: -1px;
+      line-height: 1.1;
     }
 
     .tagline {
       font-family: var(--serif);
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-style: italic;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    .intro {
-      color: var(--light);
-      font-size: 1rem;
-      max-width: 600px;
+    .intro-text {
+      max-width: 750px;
       margin: 0 auto;
+      font-size: 1.25rem;
+      color: var(--light);
       line-height: 1.8;
     }
 
     .sections {
       display: grid;
-      gap: 60px;
-      margin-top: 60px;
+      gap: 100px;
     }
 
-    .section {
+    .section-header {
+      margin-bottom: 40px;
       border-left: 4px solid var(--ember);
-      padding-left: 30px;
+      padding-left: 25px;
     }
 
-    .section h2 {
+    .section-header h2 {
       font-family: var(--serif);
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: var(--white);
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    .section p {
-      color: var(--light);
-      margin-bottom: 20px;
-      line-height: 1.8;
+    .section-header p {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
     }
 
-    .link-grid {
+    /* Grid Layouts */
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
-    .link-card {
+    .card {
       background: var(--mid);
       border: 1px solid var(--border);
-      padding: 20px;
+      padding: 35px;
+      border-radius: 4px;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      background: var(--dark);
+      border-color: var(--ember);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .card h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: var(--body);
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    .card .btn {
+      align-self: flex-start;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 10px 20px;
+      border: 1px solid var(--ember);
+      color: var(--ember);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .btn {
+      background: var(--ember);
+      color: var(--white);
+    }
+
+    /* List Layouts */
+    .file-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .file-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--mid);
+      padding: 15px 25px;
+      border: 1px solid var(--border);
       border-radius: 4px;
       transition: all 0.3s ease;
     }
 
-    .link-card:hover {
+    .file-row:hover {
+      border-color: var(--muted);
       background: var(--dark);
-      border-color: var(--ember);
-      transform: translateY(-2px);
     }
 
-    .link-card a {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 8px;
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    .link-card .description {
-      font-size: 0.9rem;
+    .file-icon {
+      font-size: 1.2rem;
+      color: var(--ember);
+    }
+
+    .file-name {
+      font-weight: 500;
+      color: var(--light);
+    }
+
+    .file-meta {
+      font-family: var(--mono);
+      font-size: 0.7rem;
       color: var(--muted);
-      line-height: 1.5;
+      text-transform: uppercase;
     }
 
-    .file-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .file-item {
-      background: var(--mid);
-      border: 1px solid var(--border);
-      padding: 12px 16px;
-      border-radius: 4px;
-      font-size: 0.95rem;
-    }
-
-    .file-item a {
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    .file-type {
-      display: inline-block;
-      background: var(--border);
-      color: var(--muted);
-      padding: 2px 8px;
-      border-radius: 2px;
+    .download-link {
       font-family: var(--mono);
       font-size: 0.75rem;
-      margin-left: 8px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .file-row:hover .download-link {
+      color: var(--ember);
+      border-color: var(--ember);
+    }
+
+    /* Session Groups */
+    .session-group {
+      margin-bottom: 60px;
+    }
+
+    .group-title {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--ember);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .group-title::after {
+      content: "";
+      height: 1px;
+      background: var(--border);
+      flex-grow: 1;
     }
 
     footer {
-      margin-top: 80px;
-      padding-top: 40px;
-      border-top: 2px solid var(--border);
+      margin-top: 120px;
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
       text-align: center;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
       color: var(--muted);
       font-size: 0.9rem;
     }
 
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      .section h2 { font-size: 1.5rem; }
+      h1 { font-size: 2.8rem; }
       .container { padding: 40px 20px; }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>mix</h1>
-      <p class="tagline">A comprehensive collection of resources</p>
-      <p class="intro">
-        This repository contains educational materials, research papers, and resources focused on understanding trauma, Complex PTSD (CPTSD), and pathways to healing. Explore the materials below to learn more about trauma-informed approaches and recovery.
-      </p>
+      <div class="institution">Capitol Contracts LLC • Clarksville, Arkansas</div>
+      <h1>What Really Happened</h1>
+      <p class="tagline">Understanding Complex PTSD Through a Documented Life</p>
+      <div class="intro-text">
+        A 18-session psychoeducational curriculum that teaches the mechanisms of trauma — its neurological foundations, relational consequences, and behavioral presentations — through the sustained examination of one documented life.
+      </div>
     </header>
 
     <main class="sections">
-      <!-- HTML Pages Section -->
-      <section class="section">
-        <h2>Interactive Pages</h2>
-        <p>Explore the main educational content and case studies:</p>
-        <div class="link-grid">
-          <div class="link-card">
-            <a href="cptsd_course.html">CPTSD Course Overview</a>
-            <p class="description">Comprehensive curriculum overview for understanding Complex PTSD and trauma recovery.</p>
+      <!-- Core Curriculum Section -->
+      <section>
+        <div class="section-header">
+          <h2>Core Curriculum</h2>
+          <p>Interactive Modules & Strategic Overviews</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>Curriculum Overview</h3>
+            <p>A complete guide to the 18 sessions, learning outcomes, and the "What Happened to You" methodology.</p>
+            <a href="WhatReallyHappened_CurriculumOverview.pdf" target="_blank" class="btn">View PDF</a>
           </div>
-          <div class="link-card">
-            <a href="case-study.html">Case Study</a>
-            <p class="description">Detailed case study examining trauma patterns and recovery methodology.</p>
+          <div class="card">
+            <h3>Interactive Course</h3>
+            <p>The digital companion to the curriculum, featuring session breakdowns and core clinical concepts.</p>
+            <a href="cptsd_course.html" target="_blank" class="btn">Open Module</a>
           </div>
-          <div class="link-card">
-            <a href="session-07-5%20(5).html">Session 07 - The Breaking Point</a>
-            <p class="description">Educational session exploring critical moments in trauma recovery.</p>
-          </div>
-          <div class="link-card">
-            <a href="session-12%20(1).html">Session 12</a>
-            <p class="description">Advanced session materials on trauma processing and integration.</p>
+          <div class="card">
+            <h3>The Case Study</h3>
+            <p>Deep dive into the methodology: why specificity succeeds where abstraction fails in trauma education.</p>
+            <a href="case-study.html" target="_blank" class="btn">Read Study</a>
           </div>
         </div>
       </section>
 
-      <!-- PDF Resources Section -->
-      <section class="section">
-        <h2>Research & Educational PDFs</h2>
-        <p>Download comprehensive research papers and lecture materials:</p>
+      <!-- Research & Whitepapers -->
+      <section>
+        <div class="section-header">
+          <h2>Research & Strategy</h2>
+          <p>Whitepapers, Lecture Series & Business Plans</p>
+        </div>
         <div class="file-list">
-          <div class="file-item">
-            <a href="WhatReallyHappened_CurriculumOverview.pdf" download>📄 What Really Happened - Curriculum Overview</a>
-            <span class="file-type">PDF</span>
+          <div class="file-row">
+            <div class="file-info">
+              <span class="file-icon">📄</span>
+              <div>
+                <div class="file-name">Understanding CPTSD Through Daniel's Life</div>
+                <div class="file-meta">Lecture Series • PDF</div>
+              </div>
+            </div>
+            <a href="Lecture%20Series_%20What%20Really%20Happened%20%E2%80%93%20Understanding%20Complex%20PTSD%20Through%20Daniel's%20Life.pdf" target="_blank" class="download-link">Open File</a>
           </div>
-          <div class="file-item">
-            <a href="Lecture%20Series_%20What%20Really%20Happened%20%E2%80%93%20Understanding%20Complex%20PTSD%20Through%20Daniel's%20Life.pdf" download>📄 Lecture Series - Understanding CPTSD Through Daniel's Life</a>
-            <span class="file-type">PDF</span>
+          <div class="file-row">
+            <div class="file-info">
+              <span class="file-icon">📄</span>
+              <div>
+                <div class="file-name">How Trauma Shapes Relationships & Legal Struggles</div>
+                <div class="file-meta">Research Paper • PDF</div>
+              </div>
+            </div>
+            <a href="How%20Trauma%20Shapes%20Relationships,%20Addiction,%20and%20Legal%20Struggles%20(1).pdf" target="_blank" class="download-link">Open File</a>
           </div>
-          <div class="file-item">
-            <a href="How%20Trauma%20Shapes%20Relationships,%20Addiction,%20and%20Legal%20Struggles%20(1).pdf" download>📄 How Trauma Shapes Relationships, Addiction, and Legal Struggles</a>
-            <span class="file-type">PDF</span>
+          <div class="file-row">
+            <div class="file-info">
+              <span class="file-icon">📄</span>
+              <div>
+                <div class="file-name">CPTSD & Suicide Risk: A Clinical Examination</div>
+                <div class="file-meta">Whitepaper • DOCX</div>
+              </div>
+            </div>
+            <a href="CPTSD_Suicide_Risk_Paper.docx" target="_blank" class="download-link">Download</a>
           </div>
-          <div class="file-item">
-            <a href="Cptsd%20Relational%20Patterns.pdf" download>📄 CPTSD Relational Patterns</a>
-            <span class="file-type">PDF</span>
-          </div>
-          <div class="file-item">
-            <a href="CPTSD_Suicide_Risk_Paper.docx" download>📄 CPTSD Suicide Risk Paper</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="veteran-suicide-whitepaper.docx" download>📄 Veteran Suicide Whitepaper</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="1-PAGE%20CAPABILITY%20STATEMENT%201.pdf" download>📄 Capability Statement</a>
-            <span class="file-type">PDF</span>
-          </div>
-          <div class="file-item">
-            <a href="The%20VA%20estimates%2017.pdf" download>📄 VA Estimates Report</a>
-            <span class="file-type">PDF</span>
+          <div class="file-row">
+            <div class="file-info">
+              <span class="file-icon">💼</span>
+              <div>
+                <div class="file-name">Capitol Contracts Business Plan & Pricing 2026</div>
+                <div class="file-meta">Strategic Document • DOCX</div>
+              </div>
+            </div>
+            <a href="capitol_contracts_business_plan.docx" target="_blank" class="download-link">Download</a>
           </div>
         </div>
       </section>
 
-      <!-- Course Sessions Section -->
-      <section class="section">
-        <h2>Course Sessions</h2>
-        <p>Complete curriculum materials for "What Really Happened" trauma education series:</p>
-        <div class="file-list">
-          <div class="file-item">
-            <a href="Session_00_Welcome_Safety_and_Why_This_Course_Exists%20(1).docx" download>📚 Session 00 - Welcome, Safety & Why This Course Exists</a>
-            <span class="file-type">DOCX</span>
+      <!-- The 18 Sessions -->
+      <section>
+        <div class="section-header">
+          <h2>The 18 Sessions</h2>
+          <p>Complete Facilitator Scripts & Session Materials</p>
+        </div>
+
+        <!-- Part I -->
+        <div class="session-group">
+          <div class="group-title">Part I: How It Gets Built Into You</div>
+          <div class="file-list">
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 00: Welcome, Safety & Why This Course Exists</div>
+              </div>
+              <a href="Session_00_Welcome_Safety_and_Why_This_Course_Exists%20(1).docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 01: The Blueprint of Survival</div>
+              </div>
+              <a href="Session_01_The_Blueprint_of_Survival.docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 02: The Masks We Wear</div>
+              </div>
+              <a href="Session_02_The_Masks_We_Wear.docx" target="_blank" class="download-link">Download</a>
+            </div>
           </div>
-          <div class="file-item">
-            <a href="Session_01_The_Blueprint_of_Survival.docx" download>📚 Session 01 - The Blueprint of Survival</a>
-            <span class="file-type">DOCX</span>
+        </div>
+
+        <!-- Part II -->
+        <div class="session-group">
+          <div class="group-title">Part II: How It Destroys Your Relationships</div>
+          <div class="file-list">
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 03: When Love Hurts</div>
+              </div>
+              <a href="Session_03_When_Love_Hurts.docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 04: The War on Reality</div>
+              </div>
+              <a href="Session_04_The_War_on_Reality.docx" target="_blank" class="download-link">Download</a>
+            </div>
           </div>
-          <div class="file-item">
-            <a href="Session_02_The_Masks_We_Wear.docx" download>📚 Session 02 - The Masks We Wear</a>
-            <span class="file-type">DOCX</span>
+        </div>
+
+        <!-- Part III -->
+        <div class="session-group">
+          <div class="group-title">Part III: How You Tried to Cope</div>
+          <div class="file-list">
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 05: Relapse Isn't a Betrayal</div>
+              </div>
+              <a href="Session_05_Relapse_Isnt_a_Betrayal.docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 06: What Healing Actually Looks Like</div>
+              </div>
+              <a href="Session_06_What_Healing_Actually_Looks_Like%20(1).docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">🌐</span>
+                <div class="file-name">Session 07: The Breaking Point (Interactive)</div>
+              </div>
+              <a href="session-07-5%20(5).html" target="_blank" class="download-link">Open Page</a>
+            </div>
           </div>
-          <div class="file-item">
-            <a href="Session_03_When_Love_Hurts.docx" download>📚 Session 03 - When Love Hurts</a>
-            <span class="file-type">DOCX</span>
+        </div>
+
+        <!-- Part IV -->
+        <div class="session-group">
+          <div class="group-title">Part IV: The Internal Battlefield</div>
+          <div class="file-list">
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 09: Shame vs. Responsibility</div>
+              </div>
+              <a href="Session_09_Shame_vs_Responsibility%20(1).docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 10: Your Brain on Trauma</div>
+              </div>
+              <a href="Session_10_Your_Brain_on_Trauma.docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 11: The Anatomy of a Spiral</div>
+              </div>
+              <a href="Session_11_The_Anatomy_of_a_Spiral%20(1).docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">🌐</span>
+                <div class="file-name">Session 12: Crisis & Safety Protocol (Interactive)</div>
+              </div>
+              <a href="session-12%20(1).html" target="_blank" class="download-link">Open Page</a>
+            </div>
           </div>
-          <div class="file-item">
-            <a href="Session_04_The_War_on_Reality.docx" download>📚 Session 04 - The War on Reality</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_05_Relapse_Isnt_a_Betrayal.docx" download>📚 Session 05 - Relapse Isn't a Betrayal</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_06_What_Healing_Actually_Looks_Like%20(1).docx" download>📚 Session 06 - What Healing Actually Looks Like</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_07_The_Breaking_Point.docx" download>📚 Session 07 - The Breaking Point</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_08_Facilitator_Script.docx" download>📚 Session 08 - Facilitator Script</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_09_Shame_vs_Responsibility%20(1).docx" download>📚 Session 09 - Shame vs Responsibility</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_10_Your_Brain_on_Trauma.docx" download>📚 Session 10 - Your Brain on Trauma</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_11_The_Anatomy_of_a_Spiral%20(1).docx" download>📚 Session 11 - The Anatomy of a Spiral</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_13_The_Lessons_Nobody_Taught_Us.docx" download>📚 Session 13 - The Lessons Nobody Taught Us</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_14_Speaking_Truth_to_Power%20(1).docx" download>📚 Session 14 - Speaking Truth to Power</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_15_The_Crucial_Question%20(2).docx" download>📚 Session 15 - The Crucial Question</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Session_16_The_Revolution_Must_Be_Trauma_Informed.docx" download>📚 Session 16 - The Revolution Must Be Trauma Informed</a>
-            <span class="file-type">DOCX</span>
+        </div>
+
+        <!-- Part V -->
+        <div class="session-group">
+          <div class="group-title">Part V: Changing the World Around You</div>
+          <div class="file-list">
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 13: The Lessons Nobody Taught Us</div>
+              </div>
+              <a href="Session_13_The_Lessons_Nobody_Taught_Us.docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 14: Speaking Truth to Power</div>
+              </div>
+              <a href="Session_14_Speaking_Truth_to_Power%20(1).docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 15: The Crucial Question</div>
+              </div>
+              <a href="Session_15_The_Crucial_Question%20(2).docx" target="_blank" class="download-link">Download</a>
+            </div>
+            <div class="file-row">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-name">Session 16: The Revolution Must Be Trauma-Informed</div>
+              </div>
+              <a href="Session_16_The_Revolution_Must_Be_Trauma_Informed.docx" target="_blank" class="download-link">Download</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Business & Narrative Section -->
-      <section class="section">
-        <h2>Business & Narrative Materials</h2>
-        <p>Strategic documents and personal narratives:</p>
-        <div class="file-list">
-          <div class="file-item">
-            <a href="capitol_contracts_business_plan.docx" download>💼 Capitol Contracts Business Plan</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="CapitolContracts_Pricing_2026.docx" download>💼 Capitol Contracts Pricing 2026</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="capitol-contracts-pitch.docx" download>💼 Capitol Contracts Pitch</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="veteran-suicide-narrative.docx" download>📖 Veteran Suicide Narrative</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="The_First_Woman_Who_Loved_Me.docx" download>📖 The First Woman Who Loved Me</a>
-            <span class="file-type">DOCX</span>
-          </div>
-          <div class="file-item">
-            <a href="Chapter_Chasity_The_One_Nobody_Knew_About.docx" download>📖 Chapter - Chastity: The One Nobody Knew About</a>
-            <span class="file-type">DOCX</span>
-          </div>
+      <!-- Media & Narratives -->
+      <section>
+        <div class="section-header">
+          <h2>Media & Narratives</h2>
+          <p>Personal Stories & Audio Resources</p>
         </div>
-      </section>
-
-      <!-- Media & Resources Section -->
-      <section class="section">
-        <h2>Media & Additional Resources</h2>
-        <p>Audio materials and supporting documents:</p>
-        <div class="file-list">
-          <div class="file-item">
-            <a href="Stabilizing_Groups_During_Active_Suicide_Disclosures.m4a" download>🎙️ Stabilizing Groups During Active Suicide Disclosures</a>
-            <span class="file-type">M4A</span>
+        <div class="grid">
+          <div class="card">
+            <h3>Personal Narratives</h3>
+            <p>First-hand accounts including "The First Woman Who Loved Me" and "Chapter: Chastity".</p>
+            <a href="The_First_Woman_Who_Loved_Me.docx" target="_blank" class="btn">Download</a>
           </div>
-          <div class="file-item">
-            <a href="Gemini_Generated_Image_35yl1u35yl1u35yl.png" download>🖼️ Gemini Generated Image</a>
-            <span class="file-type">PNG</span>
-          </div>
-          <div class="file-item">
-            <a href="What%20Really%20Happened_%20A%20Trauma%20Education%20Series%20Session%2013%20Facilitator%20Script%20_%20Version%201.0.txt" download>📄 Session 13 Facilitator Script (Text)</a>
-            <span class="file-type">TXT</span>
-          </div>
-          <div class="file-item">
-            <a href="court%20issues.pdf" download>📄 Court Issues</a>
-            <span class="file-type">PDF</span>
-          </div>
-          <div class="file-item">
-            <a href="lectures.pdf" download>📄 Lectures</a>
-            <span class="file-type">PDF</span>
+          <div class="card">
+            <h3>Audio Resources</h3>
+            <p>Stabilizing Groups During Active Suicide Disclosures - Essential listening for facilitators.</p>
+            <a href="Stabilizing_Groups_During_Active_Suicide_Disclosures.m4a" target="_blank" class="btn">Play Audio</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© 2026 What Really Happened - A Trauma Education Series. All materials are organized for educational and healing purposes.</p>
+      <div class="footer-content">
+        <div class="footer-logo">What Really Happened</div>
+        <p>© 2026 Capitol Contracts LLC. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">"The revolution is trauma-informed — or it is not a revolution at all."</p>
+      </div>
     </footer>
   </div>
 </body>
