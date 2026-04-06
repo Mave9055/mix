@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Capitol Contracts LLC | What Really Happened Trauma Intervention</title>
-  <meta name="description" content="A specialized 18-session trauma intervention for high-dropout, justice-involved, and veteran populations. SDVOSB & HUBZone certified trauma education." />
+  <meta name="description" content="A specialized 18-session trauma intervention for high-dropout, justice-involved, and veteran populations. SDVOSB & HUBZone certification pending." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -72,6 +72,19 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 1px;
+      align-items: center;
+    }
+
+    .nav-contact {
+      color: var(--white);
+      border: 1px solid var(--ember);
+      padding: 5px 12px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-contact:hover {
+      background: var(--ember);
+      color: var(--white);
     }
 
     /* Hero Section */
@@ -110,11 +123,12 @@
 
     .hero .tagline {
       font-family: var(--serif);
-      font-size: 2rem;
+      font-size: 2.25rem;
       color: var(--ember-lt);
       margin-bottom: 40px;
       font-style: italic;
       font-weight: 400;
+      line-height: 1.2;
     }
 
     .hero .hook {
@@ -426,6 +440,40 @@
       border-radius: 2px;
     }
 
+    /* Testimonials Section */
+    .testimonials {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonial-item blockquote {
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      color: var(--white);
+      font-style: italic;
+      margin-bottom: 30px;
+      line-height: 1.4;
+    }
+
+    .testimonial-item cite {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--ember);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-style: normal;
+    }
+
     /* Footer */
     footer {
       padding: 100px 0;
@@ -481,13 +529,14 @@
         <a href="#roadmap">Roadmap</a>
         <a href="#archive">Resources</a>
         <a href="1-PAGE%20CAPABILITY%20STATEMENT%201.pdf" target="_blank">Capabilities</a>
+        <a href="mailto:contact@capitolcontracts.com" class="nav-contact">Contact Us</a>
       </div>
     </nav>
 
     <header class="hero">
       <div class="badge-container">
-        <span class="badge">SDVOSB Pending</span>
-        <span class="badge">HUBZone Pending</span>
+        <span class="badge">SDVOSB Certification Pending</span>
+        <span class="badge">HUBZone Certification Pending</span>
         <span class="badge">UEI: HH77KN5AV5X7</span>
       </div>
       <h1>What Really Happened</h1>
@@ -516,7 +565,7 @@
         </div>
         <div class="comp-item">
           <h4>Target Vehicle</h4>
-          <p><a href="https://www.mentalhealth.va.gov/ssgfox-grants/" target="_blank" style="color: inherit; text-decoration: underline;">SSG Fox Grant</a></p>
+          <p>Federal Grant Vehicle</p>
         </div>
       </div>
     </section>
@@ -557,7 +606,7 @@
             <li>Personal Narrative Integration</li>
             <li>Focus on Nervous System Regulation</li>
           </ul>
-          <a href="#archive" class="btn-secondary">Explore Resources</a>
+          <a href="#archive-participants" class="btn-secondary">Explore Resources</a>
         </div>
       </div>
     </section>
@@ -597,6 +646,17 @@
       </div>
     </section>
 
+    <section class="testimonials">
+      <div class="container">
+        <div class="testimonial-grid">
+          <div class="testimonial-item">
+            <blockquote>"This curriculum bridges the gap between clinical theory and the lived reality of survival. It's the first time I've seen a framework that veterans actually respect and engage with."</blockquote>
+            <cite>— Program Director, Veteran Outreach Services</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="archive" class="archive">
       <div class="archive-header">
         <div>
@@ -608,7 +668,7 @@
         </div>
       </div>
 
-      <div class="archive-table-section">
+      <div class="archive-table-section" id="archive-clinical">
         <h3>Clinical & Strategic Documents</h3>
         <table class="file-table" id="clinicalTable">
           <thead>
@@ -735,8 +795,9 @@
         </table>
       </div>
 
-      <div class="archive-table-section">
+      <div class="archive-table-section" id="archive-participants">
         <h3>Source Materials & Founder Narrative</h3>
+        <p style="margin-bottom: 20px; color: var(--muted); font-style: italic;">Foundational narratives and memoir excerpts that ground the clinical framework in lived experience.</p>
         <table class="file-table" id="narrativeTable">
           <thead>
             <tr>
@@ -773,7 +834,7 @@
       <div class="footer-logo">Capitol Contracts LLC</div>
       <div class="footer-meta">
         UEI: HH77KN5AV5X7 • CAGE: 9ZFJ6 • Clarksville, AR<br>
-        SDVOSB & HUBZone Certified (Pending)
+        SDVOSB & HUBZone Certification Pending
       </div>
       <div class="footer-quote">
         "We don't fix broken people. We update outdated survival manuals."
