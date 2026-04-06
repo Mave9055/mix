@@ -102,19 +102,27 @@
       font-size: 4.5rem;
       line-height: 1.1;
       color: var(--white);
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .hero .tagline {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--ember-lt);
+      margin-bottom: 40px;
+      font-style: italic;
+      font-weight: 400;
     }
 
     .hero .hook {
       font-size: 1.5rem;
       color: var(--light);
       max-width: 800px;
-      margin: 0 auto 40px;
+      margin: 0 auto 30px;
       line-height: 1.5;
-      font-style: italic;
     }
 
     .hero .value-prop {
@@ -357,9 +365,23 @@
       border-radius: 4px;
     }
 
+    .archive-table-section {
+      margin-bottom: 60px;
+    }
+
+    .archive-table-section h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--ember-lt);
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
     .file-table {
       width: 100%;
       border-collapse: collapse;
+      margin-bottom: 40px;
     }
 
     .file-table th {
@@ -469,6 +491,7 @@
         <span class="badge">UEI: HH77KN5AV5X7</span>
       </div>
       <h1>What Really Happened</h1>
+      <p class="tagline">"We don't fix broken people. We update outdated survival manuals."</p>
       <p class="hook">Bridging the gap between clinical trauma theory and the reality of survival for justice-involved and high-risk veteran populations.</p>
       <p class="value-prop">A specialized 18-session intervention designed for high-dropout, justice-involved, and veteran populations who resist traditional clinical models. We reduce recidivism and suicide risk through a peer-facilitated, non-clinical framework focused on nervous system regulation and moral injury resilience.</p>
       <div class="cta-group">
@@ -481,7 +504,7 @@
       <div class="compliance-grid">
         <div class="comp-item">
           <h4>Primary NAICS</h4>
-          <p>611710 • 611430</p>
+          <p>611710 • 611430 • 624190</p>
         </div>
         <div class="comp-item">
           <h4>CAGE Code</h4>
@@ -493,7 +516,7 @@
         </div>
         <div class="comp-item">
           <h4>Target Vehicle</h4>
-          <p>SSG Fox Grant</p>
+          <p><a href="https://www.mentalhealth.va.gov/ssgfox-grants/" target="_blank" style="color: inherit; text-decoration: underline;">SSG Fox Grant</a></p>
         </div>
       </div>
     </section>
@@ -585,149 +608,165 @@
         </div>
       </div>
 
-      <table class="file-table" id="fileTable">
-        <thead>
-          <tr>
-            <th>Resource Name</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Core Documents -->
-          <tr>
-            <td>
-              <span class="file-title">Curriculum Overview & Learning Outcomes</span>
-              <span class="file-desc">A comprehensive guide to the 18-session architecture, clinical framework, and measurable learning outcomes. Essential for understanding the program's foundational principles.</span>
-            </td>
-            <td><span class="file-tag">Strategic</span></td>
-            <td><a href="WhatReallyHappened_CurriculumOverview.pdf" target="_blank">Open PDF</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Capabilities Statement (SDVOSB/HUBZone)</span>
-              <span class="file-desc">Your formal Capabilities Statement, crucial for government contracting officers and grant reviewers to assess compliance and qualifications.</span>
-            </td>
-            <td><span class="file-tag">Compliance</span></td>
-            <td><a href="1-PAGE%20CAPABILITY%20STATEMENT%201.pdf" target="_blank">Open PDF</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Capitol Contracts Business Plan 2026-2028</span>
-              <span class="file-desc">Detailed strategic plan for market entry, revenue projections, and federal contracting.</span>
-            </td>
-            <td><span class="file-tag">Strategic</span></td>
-            <td><a href="capitol_contracts_business_plan.docx" target="_blank">Download DOCX</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Licensing & Pricing Structure 2026</span>
-              <span class="file-desc">Overview of pilot, annual site, and multi-site licensing options for institutional partners.</span>
-            </td>
-            <td><span class="file-tag">Pricing</span></td>
-            <td><a href="CapitolContracts_Pricing_2026.docx" target="_blank">Download DOCX</a></td>
-          </tr>
-          <!-- Sessions -->
-          <tr>
-            <td>
-              <span class="file-title">Session 09: Shame vs. Responsibility</span>
-              <span class="file-desc">A direct moral injury intervention session, specifically designed for veteran populations, focusing on differentiating shame from accountability.</span>
-            </td>
-            <td><span class="file-tag">Session Script</span></td>
-            <td><a href="Session_09_Shame_vs_Responsibility%20(1).docx" target="_blank">Download DOCX</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Session 12: Crisis & Safety Protocol</span>
-              <span class="file-desc">An interactive 70-minute session detailing safety protocols for managing suicide risk in high-consequence environments.</span>
-            </td>
-            <td><span class="file-tag">Interactive</span></td>
-            <td><a href="session-12%20(1).html" target="_blank">Open Page</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Session 07.5: Shut Up, I Have Work Tomorrow</span>
-              <span class="file-desc">A deep dive into high-functioning trauma, exploring productivity as a dissociative strategy and its impact on nervous system regulation.</span>
-            </td>
-            <td><span class="file-tag">Interactive</span></td>
-            <td><a href="session-07-5%20(5).html" target="_blank">Open Page</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">CPTSD Course Overview (Interactive)</span>
-              <span class="file-desc">The digital companion to the curriculum, featuring session breakdowns and core clinical concepts.</span>
-            </td>
-            <td><span class="file-tag">Interactive</span></td>
-            <td><a href="cptsd_course.html" target="_blank">Open Page</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Case Study: Why Specificity Succeeds</span>
-              <span class="file-desc">Detailed case study examining trauma patterns and recovery methodology, grounding theory in lived experience.</span>
-            </td>
-            <td><span class="file-tag">Research</span></td>
-            <td><a href="case-study.html" target="_blank">Open Page</a></td>
-          </tr>
-          <!-- Research & Media -->
-          <tr>
-            <td>
-              <span class="file-title">Understanding CPTSD Through Daniel's Life (Lecture Series)</span>
-              <span class="file-desc">The core case study methodology that grounds clinical concepts, making trauma education tangible and relatable.</span>
-            </td>
-            <td><span class="file-tag">Research</span></td>
-            <td><a href="Lecture%20Series_%20What%20Really%20Happened%20%E2%80%93%20Understanding%20Complex%20PTSD%20Through%20Daniel's%20Life.pdf" target="_blank">Open PDF</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Stabilizing Groups During Active Suicide Disclosures</span>
-              <span class="file-desc">Essential audio resource providing practical guidance for peer facilitators on managing active suicide disclosures in group settings.</span>
-            </td>
-            <td><span class="file-tag">Audio</span></td>
-            <td><a href="Stabilizing_Groups_During_Active_Suicide_Disclosures.m4a" target="_blank">Play Audio</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">How Trauma Shapes Relationships, Addiction, and Legal Struggles</span>
-              <span class="file-desc">A research paper exploring the profound impact of trauma on relational dynamics and legal outcomes.</span>
-            </td>
-            <td><span class="file-tag">Research</span></td>
-            <td><a href="How%20Trauma%20Shapes%20Relationships,%20Addiction,%20and%20Legal%20Struggles%20(1).pdf" target="_blank">Open PDF</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">CPTSD & Suicide Risk: A Clinical Examination</span>
-              <span class="file-desc">Whitepaper detailing the intersection of Complex PTSD and suicide risk, offering clinical insights.</span>
-            </td>
-            <td><span class="file-tag">Whitepaper</span></td>
-            <td><a href="CPTSD_Suicide_Risk_Paper.docx" target="_blank">Download DOCX</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Veteran Suicide Whitepaper</span>
-              <span class="file-desc">A critical analysis of veteran suicide, focusing on contributing factors and intervention strategies.</span>
-            </td>
-            <td><span class="file-tag">Whitepaper</span></td>
-            <td><a href="veteran-suicide-whitepaper.docx" target="_blank">Download DOCX</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">The First Woman Who Loved Me (Narrative)</span>
-              <span class="file-desc">A personal narrative exploring the profound impact of early relationships on trauma and healing.</span>
-            </td>
-            <td><span class="file-tag">Narrative</span></td>
-            <td><a href="The_First_Woman_Who_Loved_Me.docx" target="_blank">Download DOCX</a></td>
-          </tr>
-          <tr>
-            <td>
-              <span class="file-title">Chapter: Chastity - The One Nobody Knew About (Narrative)</span>
-              <span class="file-desc">An excerpt from a personal memoir, offering insights into hidden aspects of trauma and survival.</span>
-            </td>
-            <td><span class="file-tag">Narrative</span></td>
-            <td><a href="Chapter_Chasity_The_One_Nobody_Knew_About.docx" target="_blank">Download DOCX</a></td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="margin-top: 30px; color: var(--muted); font-size: 0.9rem; text-align: center;">Access to the full 18-session repository is available for licensed institutional partners. <a href="CapitolContracts_Pricing_2026.docx" target="_blank" style="color: var(--ember);">Contact us</a> for full implementation prospectus.</p>
+      <div class="archive-table-section">
+        <h3>Clinical & Strategic Documents</h3>
+        <table class="file-table" id="clinicalTable">
+          <thead>
+            <tr>
+              <th>Resource Name</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="file-title">Curriculum Overview & Learning Outcomes</span>
+                <span class="file-desc">A comprehensive guide to the 18-session architecture, clinical framework, and measurable learning outcomes. Essential for understanding the program's foundational principles.</span>
+              </td>
+              <td><span class="file-tag">Strategic</span></td>
+              <td><a href="WhatReallyHappened_CurriculumOverview.pdf" target="_blank">Open PDF</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Capabilities Statement (SDVOSB/HUBZone)</span>
+                <span class="file-desc">Your formal Capabilities Statement, crucial for government contracting officers and grant reviewers to assess compliance and qualifications.</span>
+              </td>
+              <td><span class="file-tag">Compliance</span></td>
+              <td><a href="1-PAGE%20CAPABILITY%20STATEMENT%201.pdf" target="_blank">Open PDF</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Capitol Contracts Business Plan 2026-2028</span>
+                <span class="file-desc">Detailed strategic plan for market entry, revenue projections, and federal contracting.</span>
+              </td>
+              <td><span class="file-tag">Strategic</span></td>
+              <td><a href="capitol_contracts_business_plan.docx" target="_blank">Download DOCX</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Licensing & Pricing Structure 2026</span>
+                <span class="file-desc">Overview of pilot, annual site, and multi-site licensing options for institutional partners.</span>
+              </td>
+              <td><span class="file-tag">Pricing</span></td>
+              <td><a href="CapitolContracts_Pricing_2026.docx" target="_blank">Download DOCX</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Session 09: Shame vs. Responsibility</span>
+                <span class="file-desc">A direct moral injury intervention session, specifically designed for veteran populations, focusing on differentiating shame from accountability.</span>
+              </td>
+              <td><span class="file-tag">Session Script</span></td>
+              <td><a href="Session_09_Shame_vs_Responsibility%20(1).docx" target="_blank">Download DOCX</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Session 12: Crisis & Safety Protocol</span>
+                <span class="file-desc">An interactive 70-minute session detailing safety protocols for managing suicide risk in high-consequence environments.</span>
+              </td>
+              <td><span class="file-tag">Interactive</span></td>
+              <td><a href="session-12%20(1).html" target="_blank">Open Page</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Session 07.5: Shut Up, I Have Work Tomorrow</span>
+                <span class="file-desc">A deep dive into high-functioning trauma, exploring productivity as a dissociative strategy and its impact on nervous system regulation.</span>
+              </td>
+              <td><span class="file-tag">Interactive</span></td>
+              <td><a href="session-07-5%20(5).html" target="_blank">Open Page</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">CPTSD Course Overview (Interactive)</span>
+                <span class="file-desc">The digital companion to the curriculum, featuring session breakdowns and core clinical concepts.</span>
+              </td>
+              <td><span class="file-tag">Interactive</span></td>
+              <td><a href="cptsd_course.html" target="_blank">Open Page</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Case Study: Why Specificity Succeeds</span>
+                <span class="file-desc">Detailed case study examining trauma patterns and recovery methodology, grounding theory in lived experience.</span>
+              </td>
+              <td><span class="file-tag">Research</span></td>
+              <td><a href="case-study.html" target="_blank">Open Page</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Understanding CPTSD Through Daniel's Life (Lecture Series)</span>
+                <span class="file-desc">The core case study methodology that grounds clinical concepts, making trauma education tangible and relatable.</span>
+              </td>
+              <td><span class="file-tag">Research</span></td>
+              <td><a href="Lecture%20Series_%20What%20Really%20Happened%20%E2%80%93%20Understanding%20Complex%20PTSD%20Through%20Daniel's%20Life.pdf" target="_blank">Open PDF</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Stabilizing Groups During Active Suicide Disclosures</span>
+                <span class="file-desc">Essential audio resource providing practical guidance for peer facilitators on managing active suicide disclosures in group settings.</span>
+              </td>
+              <td><span class="file-tag">Audio</span></td>
+              <td><a href="Stabilizing_Groups_During_Active_Suicide_Disclosures.m4a" target="_blank">Play Audio</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">How Trauma Shapes Relationships, Addiction, and Legal Struggles</span>
+                <span class="file-desc">A research paper exploring the profound impact of trauma on relational dynamics and legal outcomes.</span>
+              </td>
+              <td><span class="file-tag">Research</span></td>
+              <td><a href="How%20Trauma%20Shapes%20Relationships,%20Addiction,%20and%20Legal%20Struggles%20(1).pdf" target="_blank">Open PDF</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">CPTSD & Suicide Risk: A Clinical Examination</span>
+                <span class="file-desc">Whitepaper detailing the intersection of Complex PTSD and suicide risk, offering clinical insights.</span>
+              </td>
+              <td><span class="file-tag">Whitepaper</span></td>
+              <td><a href="CPTSD_Suicide_Risk_Paper.docx" target="_blank">Download DOCX</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Veteran Suicide Whitepaper</span>
+                <span class="file-desc">A critical analysis of veteran suicide, focusing on contributing factors and intervention strategies.</span>
+              </td>
+              <td><span class="file-tag">Whitepaper</span></td>
+              <td><a href="veteran-suicide-whitepaper.docx" target="_blank">Download DOCX</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="archive-table-section">
+        <h3>Source Materials & Founder Narrative</h3>
+        <table class="file-table" id="narrativeTable">
+          <thead>
+            <tr>
+              <th>Resource Name</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="file-title">The First Woman Who Loved Me (Narrative)</span>
+                <span class="file-desc">A personal narrative exploring the profound impact of early relationships on trauma and healing.</span>
+              </td>
+              <td><span class="file-tag">Narrative</span></td>
+              <td><a href="The_First_Woman_Who_Loved_Me.docx" target="_blank">Download DOCX</a></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="file-title">Chapter: Chastity - The One Nobody Knew About (Narrative)</span>
+                <span class="file-desc">An excerpt from a personal memoir, offering insights into hidden aspects of trauma and survival.</span>
+              </td>
+              <td><span class="file-tag">Narrative</span></td>
+              <td><a href="Chapter_Chasity_The_One_Nobody_Knew_About.docx" target="_blank">Download DOCX</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top: 30px; color: var(--muted); font-size: 0.9rem; text-align: center;">Access to the full 18-session repository is available for licensed institutional partners. <a href="mailto:contact@capitolcontracts.com" style="color: var(--ember);">Contact us</a> for full implementation prospectus.</p>
     </section>
 
     <footer>
@@ -745,22 +784,25 @@
 
   <script>
     function filterFiles() {
-      var input, filter, table, tr, td, i, txtValue;
+      var input, filter, tables, tr, td, i, j, txtValue;
       input = document.getElementById("fileSearch");
       filter = input.value.toUpperCase();
-      table = document.getElementById("fileTable");
-      tr = table.getElementsByTagName("tr");
-      for (i = 1; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0]; // Column for Resource Name
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
+      tables = [document.getElementById("clinicalTable"), document.getElementById("narrativeTable")];
+      
+      tables.forEach(function(table) {
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
           }
         }
-      }
+      });
     }
   </script>
 </body>
