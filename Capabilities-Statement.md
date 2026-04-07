@@ -1,6 +1,6 @@
 # CAPABILITIES STATEMENT
 **Capitol Contracts LLC | Clarksville, AR**
-*Veteran-Owned Small Business | SDVOSB Eligibility Confirmed (DD214 Pending) | HUBZone-Eligible (Rural Arkansas)*
+*Veteran-Owned Small Business (VOSB) | SDVOSB/HUBZone: Application in Preparation*
 
 **UEI:** HH77KN5AV5X7 | **CAGE:** 9ZFJ6 | **SAM:** Active
 **Primary NAICS:** 611710 (Educational Support) | 611430 (Professional Development) | 624190 (Individual & Family Services)
@@ -44,7 +44,7 @@ Non-clinical, peer-facilitated trauma education for military, veteran, and justi
 * **Peer-facilitated, not clinical** — Reaches populations that reject clinical framing
 * **Built from documented C-PTSD case study** — Theory grounded in lived experience
 * **Moral injury-informed** — Targets a condition with no standard VA protocol (35-60% of combat vets with PTSD)
-* **Veteran-owned + HUBZone-eligible (rural Arkansas)** — Supports agency small business and rural outreach goals
+* **Veteran-owned (DD214 pending) | HUBZone-eligible: Clarksville, AR (qualified census tract)** — Supports agency small business and rural outreach goals
 * **Fully scripted, deployable day one** — No infrastructure buildout required
 
 **Federal Alignment:** Directly addresses VA's call for "touch points outside clinical settings" and supports implementation of the What Works for Preventing Veteran Suicide Act (H.R. 2942).
@@ -54,8 +54,11 @@ Non-clinical, peer-facilitated trauma education for military, veteran, and justi
 ### READINESS / COMPLIANCE STATUS
 * **Curriculum Complete:** 18-session What Really Happened framework finalized, SAMHSA-aligned
 * **Materials Ready:** Facilitator scripts, safety protocols, participant workbooks prepared for deployment
-* **Business Status:** Veteran-owned LLC | CAGE 9ZFJ6 active | SAM registration current
-* **Certifications:** SDVOSB eligibility confirmed (DD214 pending) | HUBZone: Clarksville, AR qualifies
+* **Business Status:** Capitol Contracts LLC: Veteran-Owned Small Business (VOSB) | SDVOSB/HUBZone prep underway
+* **Socioeconomic Status**: 
+    - VOSB: Self-certified (Veteran status verified)
+    - SDVOSB: DD214 request submitted to NPRC; SBA VetCert application to follow
+    - HUBZone: Principal residence in Clarksville, AR (qualified census tract); application in preparation
 * **Deployment Target:** Rural Arkansas pilot design; scalable to VA/DoD, justice systems
 * **Next Step:** Seeking institutional partners for first implementation cohort (Q2/Q3 2026)
 * **Evaluation Framework:** Pre/post knowledge assessment + retention metrics built into curriculum
