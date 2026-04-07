@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What Really Happened | Capitol Contracts LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:wght@300;400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ember: #c4621a;
+    --ember-dim: #8c3f0d;
+    --ember-glow: rgba(196,98,26,0.15);
+    --bg: #0d0c0b;
+    --surface: #141210;
+    --surface-2: #1c1916;
+    --border: rgba(196,98,26,0.2);
+    --text: #e8e0d5;
+    --text-dim: #8a7f74;
+    --text-muted: #4a4440;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 2.5rem;
+    background: rgba(13,12,11,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ember); }
+  .nav-cta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ember) !important;
+    border: 1px solid var(--ember);
+    padding: 0.45rem 1.1rem;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--ember); color: var(--bg) !important; }
+
+  /* ─── HERO ────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 2.5rem 5rem;
+    max-width: 900px; margin: 0 auto;
+    position: relative;
+  }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.6s 0.1s forwards;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.8rem;
+    opacity: 0; animation: fadeUp 0.6s 0.2s forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--ember);
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    max-width: 600px;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    opacity: 0; animation: fadeUp 0.6s 0.35s forwards;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+    opacity: 0; animation: fadeUp 0.6s 0.5s forwards;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--ember);
+    color: var(--bg);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.95rem 2rem;
+    border-radius: 2px;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #d4701e; transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-block;
+    color: var(--text-dim);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.95rem 0;
+    border-bottom: 1px solid var(--text-muted);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--text); border-color: var(--text-dim); }
+
+  .hero-pilot-note {
+    margin-top: 2.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    opacity: 0; animation: fadeUp 0.6s 0.65s forwards;
+  }
+  .hero-pilot-note span { color: var(--ember-dim); }
+
+  /* ─── DIVIDER ─────────────────────────── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ─── SECTION BASE ────────────────────── */
+  section { padding: 6rem 2.5rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    color: var(--text-dim);
+    max-width: 560px;
+    margin-bottom: 3.5rem;
+  }
+
+  /* ─── WHAT IT IS ──────────────────────── */
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+  .what-cell {
+    background: var(--surface);
+    padding: 2rem;
+  }
+  .what-cell-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+  .what-cell-value {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .what-cell-value em { color: var(--ember); font-style: normal; }
+
+  /* ─── PATHWAYS ────────────────────────── */
+  .pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .pathway-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .pathway-card:hover {
+    border-color: var(--ember);
+    background: var(--surface-2);
+  }
+  .pathway-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 1rem;
+  }
+  .pathway-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .pathway-card p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+  .pathway-card ul {
+    list-style: none;
+    margin-bottom: 1.8rem;
+  }
+  .pathway-card ul li {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--surface-2);
+  }
+  .pathway-card ul li::before { content: "— "; color: var(--ember); }
+  .pathway-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ember);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ember-dim);
+    padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+  .pathway-link:hover { border-color: var(--ember); }
+
+  /* ─── ROADMAP ─────────────────────────── */
+  .roadmap-bg { background: var(--surface); }
+  .roadmap-parts {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .roadmap-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .roadmap-row:last-child { border-bottom: none; }
+  .roadmap-row:hover { background: var(--surface-2); }
+  .roadmap-num {
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ember);
+    border-right: 1px solid var(--border);
+    padding: 1.5rem;
+  }
+  .roadmap-content { padding: 1.5rem 2rem; }
+  .roadmap-content h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .roadmap-content p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  /* ─── RESOURCES ───────────────────────── */
+  .resource-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .resource-table thead tr {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .resource-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 400;
+  }
+  .resource-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .resource-table tbody tr:last-child { border-bottom: none; }
+  .resource-table tbody tr:hover { background: var(--surface); }
+  .resource-table td {
+    padding: 1.1rem 1.5rem;
+    font-size: 0.88rem;
+    vertical-align: middle;
+  }
+  .resource-table td:first-child { color: var(--text); }
+  .resource-table td:nth-child(2) {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .resource-table a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ember);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .resource-table a:hover { text-decoration: underline; }
+  .resource-desc {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 0.2rem;
+  }
+  .locked-row td { opacity: 0.45; }
+  .locked-row td:last-child { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--text-muted); letter-spacing: 0.06em; }
+
+  /* ─── CONTACT ─────────────────────────── */
+  .contact-box {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3.5rem;
+    background: var(--surface);
+    max-width: 680px;
+  }
+  .contact-box h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .contact-box p {
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    max-width: 480px;
+  }
+  .contact-email-line {
+    display: flex; align-items: center; gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .contact-email {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.88rem;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-email:hover { color: var(--ember); border-color: var(--ember); }
+  .contact-note {
+    margin-top: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ─── FOOTER ──────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    line-height: 2;
+  }
+  .footer-left a { color: var(--text-muted); text-decoration: none; }
+  .footer-quote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    max-width: 380px;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  /* ─── ANIMATIONS ──────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ──────────────────────── */
+  @media (max-width: 720px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .what-grid { grid-template-columns: 1fr; }
+    .pathway-grid { grid-template-columns: 1fr; }
+    .contact-box { padding: 2rem; }
+    .footer-quote { display: none; }
+    footer { flex-direction: column; }
+    .resource-table th:nth-child(2),
+    .resource-table td:nth-child(2) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">Capitol Contracts LLC</a>
+  <div class="nav-links">
+    <a href="#what">The Program</a>
+    <a href="#pathways">Pathways</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-label">Capitol Contracts LLC &nbsp;·&nbsp; UEI: HH77KN5AV5X7 &nbsp;·&nbsp; CAGE: 9ZFJ6</p>
+  <h1>What<br /><em>Really</em><br />Happened</h1>
+  <p class="hero-sub">
+    An 18-session trauma intervention built for the populations that clinical models lose —
+    justice-involved, high-risk veteran, and high-dropout. Peer-facilitated. Non-clinical. Deployable now.
+  </p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-primary">Contact Us</a>
+    <a href="WhatReallyHappened_CurriculumOverview.pdf" class="btn-secondary" target="_blank">Download Prospectus</a>
+  </div>
+  <p class="hero-pilot-note">
+    <span>Now accepting pilot inquiries</span> from corrections, VA/DoD programs, and community mental health systems.
+  </p>
+</div>
+
+<hr class="section-divider" />
+
+<!-- WHAT IT IS -->
+<section id="what">
+  <div class="container">
+    <p class="section-label">The Program</p>
+    <h2 class="section-title">Built for the Room<br />Most Programs Walk Away From</h2>
+    <p class="section-sub">A SAMHSA-aligned psychoeducational framework that shifts the clinical question from "what is wrong with you?" to "what happened to you?" — and makes that shift legible to peer specialists, not just clinicians.</p>
+
+    <div class="what-grid">
+      <div class="what-cell">
+        <p class="what-cell-label">Format</p>
+        <div class="what-cell-value"><em>18 sessions</em> — modular, sequential, 60–75 min each</div>
+      </div>
+      <div class="what-cell">
+        <p class="what-cell-label">Delivery</p>
+        <div class="what-cell-value">Peer-facilitated — no clinical license required</div>
+      </div>
+      <div class="what-cell">
+        <p class="what-cell-label">Primary Populations</p>
+        <div class="what-cell-value">Justice-involved adults, high-risk veterans, addiction recovery cohorts</div>
+      </div>
+      <div class="what-cell">
+        <p class="what-cell-label">Outcomes Targeted</p>
+        <div class="what-cell-value">Recidivism reduction, suicide risk literacy, nervous system regulation</div>
+      </div>
+      <div class="what-cell">
+        <p class="what-cell-label">NAICS</p>
+        <div class="what-cell-value">611710 · 611430 · 624190</div>
+      </div>
+      <div class="what-cell">
+        <p class="what-cell-label">Certifications</p>
+        <div class="what-cell-value">SDVOSB Pending · HUBZone Pending</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- PATHWAYS -->
+<section id="pathways">
+  <div class="container">
+    <p class="section-label">Who This Is For</p>
+    <h2 class="section-title">Three Entry Points</h2>
+    <p class="section-sub">The program serves different functions depending on who's in the room. Find yours below.</p>
+
+    <div class="pathway-grid">
+      <div class="pathway-card">
+        <p class="pathway-icon">01 — Administrators</p>
+        <h3>Grant Reviewers &amp; Program Directors</h3>
+        <p>Scalable trauma literacy with measurable retention outcomes. Sole-source contracting ready. SAMHSA-aligned documentation available.</p>
+        <ul>
+          <li>Modularized intervention framework</li>
+          <li>Measurable retention outcomes</li>
+          <li>Sole-source contracting ready</li>
+        </ul>
+        <a href="capitol_contracts_business_plan.docx" class="pathway-link">View Business Plan</a>
+      </div>
+      <div class="pathway-card">
+        <p class="pathway-icon">02 — Facilitators</p>
+        <h3>Peer Specialists &amp; Program Staff</h3>
+        <p>Word-for-word facilitator scripts that let a peer specialist hold a trauma-informed room without requiring a clinical license or advanced training.</p>
+        <ul>
+          <li>Load-bearing facilitator scripts</li>
+          <li>Crisis &amp; safety protocols</li>
+          <li>Clinical appendices included</li>
+        </ul>
+        <a href="cptsd_course.html" class="pathway-link">Open Facilitator Portal</a>
+      </div>
+      <div class="pathway-card">
+        <p class="pathway-icon">03 — Participants</p>
+        <h3>Outreach Workers &amp; Participants</h3>
+        <p>Psychoeducation built to be understood by someone in crisis — not summarized for them. Nervous system language, not clinical language.</p>
+        <ul>
+          <li>Engaging interactive modules</li>
+          <li>Personal narrative integration</li>
+          <li>Focus on nervous system regulation</li>
+        </ul>
+        <a href="#resources" class="pathway-link">Explore Resources</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ROADMAP -->
+<section id="roadmap" class="roadmap-bg">
+  <div class="container">
+    <p class="section-label">Curriculum Architecture</p>
+    <h2 class="section-title">Five-Part Roadmap</h2>
+    <p class="section-sub">Eighteen sessions structured as a progression — not a topic list. Each part builds on the last.</p>
+
+    <div class="roadmap-parts">
+      <div class="roadmap-row">
+        <div class="roadmap-num">Part I</div>
+        <div class="roadmap-content">
+          <h4>How It Gets Built Into You</h4>
+          <p>Early development, trauma formation, and the nervous system in childhood.</p>
+        </div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-num">Part II</div>
+        <div class="roadmap-content">
+          <h4>How It Destroys Your Relationships</h4>
+          <p>Adult attachment disruption, trauma bonding, and relational re-enactment.</p>
+        </div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-num">Part III</div>
+        <div class="roadmap-content">
+          <h4>How You Tried to Cope</h4>
+          <p>Regulation strategies, addiction, the breaking point, and high-functioning presentation.</p>
+        </div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-num">Part IV</div>
+        <div class="roadmap-content">
+          <h4>The Internal Battlefield</h4>
+          <p>Neuroscience, shame, crisis architecture, and safety protocol.</p>
+        </div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-num">Part V</div>
+        <div class="roadmap-content">
+          <h4>Changing the World Around You</h4>
+          <p>Integration, advocacy, meaning-making, and systemic change.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- RESOURCES -->
+<section id="resources">
+  <div class="container">
+    <p class="section-label">Resource Archive</p>
+    <h2 class="section-title">Supporting Documents</h2>
+    <p class="section-sub">Program documentation, session samples, and research materials. Full 18-session repository available to licensed partners.</p>
+
+    <table class="resource-table">
+      <thead>
+        <tr>
+          <th>Document</th>
+          <th>Category</th>
+          <th>Access</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Curriculum Overview &amp; Learning Outcomes
+            <div class="resource-desc">18-session architecture, clinical framework, and measurable learning outcomes.</div>
+          </td>
+          <td>Strategic</td>
+          <td><a href="WhatReallyHappened_CurriculumOverview.pdf" target="_blank">Open PDF</a></td>
+        </tr>
+        <tr>
+          <td>
+            Capabilities Statement
+            <div class="resource-desc">Formal capabilities statement for contracting officers and grant reviewers.</div>
+          </td>
+          <td>Compliance</td>
+          <td><a href="1-PAGE%20CAPABILITY%20STATEMENT%201.pdf" target="_blank">Open PDF</a></td>
+        </tr>
+        <tr>
+          <td>
+            Business Plan 2026–2028
+            <div class="resource-desc">Market entry strategy, revenue projections, and federal contracting roadmap.</div>
+          </td>
+          <td>Strategic</td>
+          <td><a href="capitol_contracts_business_plan.docx" target="_blank">Download</a></td>
+        </tr>
+        <tr>
+          <td>
+            Licensing &amp; Pricing Structure 2026
+            <div class="resource-desc">Pilot, annual site, and multi-site licensing options for institutional partners.</div>
+          </td>
+          <td>Pricing</td>
+          <td><a href="CapitolContracts_Pricing_2026.docx" target="_blank">Download</a></td>
+        </tr>
+        <tr>
+          <td>
+            Session 09: Shame vs. Responsibility
+            <div class="resource-desc">Moral injury intervention for veteran populations — sample facilitator script.</div>
+          </td>
+          <td>Session Sample</td>
+          <td><a href="Session_09_Shame_vs_Responsibility%20(1).docx" target="_blank">Download</a></td>
+        </tr>
+        <tr>
+          <td>
+            Session 12: Crisis &amp; Safety Protocol
+            <div class="resource-desc">Interactive 70-minute session on managing suicide risk in high-consequence environments.</div>
+          </td>
+          <td>Interactive</td>
+          <td><a href="session-12%20(1).html" target="_blank">Open</a></td>
+        </tr>
+        <tr>
+          <td>
+            Session 07.5: Shut Up, I Have Work Tomorrow
+            <div class="resource-desc">High-functioning trauma — productivity as dissociation.</div>
+          </td>
+          <td>Interactive</td>
+          <td><a href="session-07-5%20(5).html" target="_blank">Open</a></td>
+        </tr>
+        <tr>
+          <td>
+            CPTSD Course Overview
+            <div class="resource-desc">Digital companion with session breakdowns and core clinical concepts.</div>
+          </td>
+          <td>Interactive</td>
+          <td><a href="cptsd_course.html" target="_blank">Open</a></td>
+        </tr>
+        <tr>
+          <td>
+            CPTSD &amp; Suicide Risk: Clinical Examination
+            <div class="resource-desc">Whitepaper on the intersection of Complex PTSD and suicide risk.</div>
+          </td>
+          <td>Whitepaper</td>
+          <td><a href="CPTSD_Suicide_Risk_Paper.docx" target="_blank">Download</a></td>
+        </tr>
+        <tr>
+          <td>
+            Veteran Suicide Whitepaper
+            <div class="resource-desc">Contributing factors, risk architecture, and intervention strategies.</div>
+          </td>
+          <td>Whitepaper</td>
+          <td><a href="veteran-suicide-whitepaper.docx" target="_blank">Download</a></td>
+        </tr>
+        <tr>
+          <td>
+            Trauma, Relationships, Addiction, and Legal Struggles
+            <div class="resource-desc">Research paper on trauma's downstream impact on relational and legal outcomes.</div>
+          </td>
+          <td>Research</td>
+          <td><a href="How%20Trauma%20Shapes%20Relationships,%20Addiction,%20and%20Legal%20Struggles%20(1).pdf" target="_blank">Open PDF</a></td>
+        </tr>
+        <tr>
+          <td>
+            Stabilizing Groups During Active Suicide Disclosures
+            <div class="resource-desc">Audio guidance for peer facilitators managing active disclosures in group settings.</div>
+          </td>
+          <td>Audio</td>
+          <td><a href="Stabilizing_Groups_During_Active_Suicide_Disclosures.m4a" target="_blank">Play</a></td>
+        </tr>
+        <tr class="locked-row">
+          <td>
+            Full 18-Session Facilitator Repository
+            <div class="resource-desc">Complete word-for-word scripts, crisis protocols, and clinical appendices for all 18 sessions.</div>
+          </td>
+          <td>Licensed Partners</td>
+          <td>Contact for Access</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <div class="contact-box">
+      <h2>If this fits what you're<br />trying to solve, reach out.</h2>
+      <p>We're currently accepting pilot inquiries from corrections departments, VA-affiliated programs, and community mental health organizations. No pitch deck required — just tell us what you're working with.</p>
+      <div class="contact-email-line">
+        <a href="mailto:bret_lingar@outlook.com" class="btn-primary">Send an Email</a>
+        <a href="mailto:bret_lingar@outlook.com" class="contact-email">bret_lingar@outlook.com</a>
+      </div>
+      <p class="contact-note">
+        Capitol Contracts LLC &nbsp;·&nbsp; Clarksville, AR<br />
+        UEI: HH77KN5AV5X7 &nbsp;·&nbsp; CAGE: 9ZFJ6<br />
+        SDVOSB &amp; HUBZone Certification Pending
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    © 2026 Capitol Contracts LLC<br />
+    <a href="1-PAGE%20CAPABILITY%20STATEMENT%201.pdf" target="_blank">Capability Statement</a> &nbsp;·&nbsp;
+    <a href="WhatReallyHappened_CurriculumOverview.pdf" target="_blank">Curriculum Overview</a>
+  </div>
+  <div class="footer-quote">
+    "We don't fix broken people.<br />We update outdated survival manuals."
+  </div>
+</footer>
+
+</body>
+</html>
